@@ -6,7 +6,7 @@ name: PR ON Master
 on:
   pull_request:
     branches: 
-      - master
+      - main
 
 jobs:
   build:
