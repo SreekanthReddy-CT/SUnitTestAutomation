@@ -9,17 +9,19 @@ on:
       - main
 
 jobs:
-  build:
-    runs-on: macos-12
-    
-    steps:
+    test:
+        runs-on: macos-latest
+        
+        steps:
         - name: Checkout code
-          uses: actions/checkout@v2
+          uses: actions/checkout@v3
 
-        - name: Set up Xcode
-          uses: maxim-lobanov/setup-xcode@v1
+        - name: Setup Xcode
+          uses: actions/setup-xcode@v3
           with:
-            xcode-version: '14.2'
+            xcode-version: latest
+            target-device: "iPhone 14 Pro"
+            osx-version: "16.4"
 
-        - name: Build and Test
-          run: xcodebuild test -project SUnitTestAutomation.xcodeproj -scheme SUnitTestAutomation -destination 'platform=iOS Simulator,name=iPhone 14 Pro,OS=16.2'
+        - name: Run Unit Tests
+          run: xcodebuild test -project SUnitTestAutomation.xcodeproj -scheme SUnitTestAutomation -destination 'platform=iOS Simulator,name=iPhone 14 Pro,OS=16.4'
