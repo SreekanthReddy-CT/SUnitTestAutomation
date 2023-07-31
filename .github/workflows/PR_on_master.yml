@@ -18,9 +18,7 @@ jobs:
 
       - name: Set up Xcode
         uses: actions/setup-xcode@v2
-        with:
-            xcode-version: '14.3.x'
+        with: xcode-version: '14.3.x'
 
       - name: Build and Test
-        run: |
-            xcodebuild test -project SUnitTestAutomation.xcodeproj -scheme SUnitTestAutomation -destination 'platform=iOS Simulator,name=iPhone 14 Pro,OS=16.4'
+        run: xcodebuild test -project SUnitTestAutomation.xcodeproj -scheme SUnitTestAutomation -destination 'platform=iOS Simulator,name=iPhone 14 Pro,OS=16.4'
