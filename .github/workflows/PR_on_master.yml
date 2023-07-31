@@ -17,11 +17,9 @@ jobs:
           uses: actions/checkout@v3
 
         - name: Setup Xcode
-          uses: actions/setup-xcode@v3
+          uses: maxim-lobanov/setup-xcode@v1
           with:
-            xcode-version: latest
-            target-device: "iPhone 14 Pro"
-            osx-version: "16.4"
+            xcode-version: '14.3.1'
 
         - name: Run Unit Tests
           run: xcodebuild test -project SUnitTestAutomation.xcodeproj -scheme SUnitTestAutomation -destination 'platform=iOS Simulator,name=iPhone 14 Pro,OS=16.4'
