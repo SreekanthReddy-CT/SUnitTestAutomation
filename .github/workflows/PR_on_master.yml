@@ -19,7 +19,13 @@ jobs:
         - name: Setup Xcode
           uses: maxim-lobanov/setup-xcode@v1
           with:
-            xcode-version: '14.2.0'
+            xcode-version: latest-stable
+
+        - name: Show macOS Version
+          run: sw_vers
+      
+        - name: Show Xcode Version
+          run: xcodebuild -version
 
         - name: Run Unit Tests
-          run: xcodebuild test -project SUnitTestAutomation.xcodeproj -scheme SUnitTestAutomation -destination 'platform=iOS Simulator,name=iPhone 14 Pro,OS=16.2'
+          run: xcodebuild test -project SUnitTestAutomation.xcodeproj -scheme SUnitTestAutomation -destination 'platform=iOS Simulator,name=iPhone 13,OS=16'
