@@ -13,6 +13,14 @@ jobs:
     runs-on: macos-12
     
     steps:
-    - uses: actions/checkout@v3
-    - name: Test
-      run: xcodebuild test -project SUnitTestAutomation.xcodeproj -scheme SUnitTestAutomation -destination 'platform=iOS Simulator,name=iPhone 14 Pro,OS=16.4'
+    - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Xcode
+        uses: actions/setup-xcode@v2
+        with:
+            xcode-version: '14.3.x'
+
+      - name: Build and Test
+        run: |
+            xcodebuild test -project SUnitTestAutomation.xcodeproj -scheme SUnitTestAutomation -destination 'platform=iOS Simulator,name=iPhone 14 Pro,OS=16.4'
