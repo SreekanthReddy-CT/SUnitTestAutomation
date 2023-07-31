@@ -28,4 +28,4 @@ jobs:
           run: xcodebuild -version
 
         - name: Run Unit Tests
-          run: xcodebuild test -project SUnitTestAutomation.xcodeproj -scheme SUnitTestAutomation -destination 'platform=iOS Simulator,name=iPhone 13,OS=16'
+          run: xcodebuild test -project SUnitTestAutomation.xcodeproj -scheme SUnitTestAutomation -destination 'platform=iOS Simulator,name=iPhone 13,OS=16.2'
