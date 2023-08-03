@@ -1,0 +1,4 @@
+lane :tests do
+  setup_ci if ENV['CI']
+  run_tests(scheme: "SUnitTestAutomationTests")
+end
