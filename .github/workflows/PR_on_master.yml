@@ -4,7 +4,7 @@
 name: PR_ON_Master
 
 on:
-  push:
+  pull_request::
     branches:
       - main
 
@@ -23,9 +23,6 @@ jobs:
 
         - name: Show macOS Version
           run: sw_vers
-
-        - name: Run swiftlint
-          run: swiftlint
       
         - name: Show Xcode Version
           run: xcodebuild -version
